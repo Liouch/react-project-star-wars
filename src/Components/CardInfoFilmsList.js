@@ -7,7 +7,7 @@ async function getFilmInfo(url) {
   const infoJson = await info.json();
   return infoJson;
 }
-function CardInfoFilms(props) {
+function CardInfoFilmsList(props) {
   const { filmUrl } = props;
   const [film, setFilm] = React.useState("");
   console.log(filmUrl);
@@ -24,8 +24,8 @@ function CardInfoFilms(props) {
   if (isLoading) return <>Loading...</>;
   if (error) return <>Error...</>;
   return (
-  <li>{film.title}</li>
+  <li><Link to={`/film/${filmUrl.split("/")[5]}`}>{film.title}</Link></li>
   );
 }
 
-export default CardInfoFilms;
+export default CardInfoFilmsList;

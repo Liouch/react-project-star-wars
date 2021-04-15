@@ -2,7 +2,7 @@ import * as React from "react";
 import { useParams } from "react-router";
 import { useQuery } from "react-query";
 import CardInfoPlanet from "./CardInfoPlanet";
-import CardInfoFilms from "./CardInfoFilms";
+import CardInfoFilmsList from "./CardInfoFilmsList";
 
 async function getCharacterInfo(url) {
   const info = await fetch(url);
@@ -16,7 +16,7 @@ function CardPersonalInfo(props) {
   const [films, setFilms] = React.useState([]);
   
 
-  const personalInfoUrl = `https://swapi.dev/api/${people}/${id}`;
+  const personalInfoUrl = `https://swapi.dev/api/people/${id}`;
 
   const { isLoading, error, data } = useQuery(
     ["CharacterInfo", personalInfoUrl],
@@ -37,7 +37,7 @@ function CardPersonalInfo(props) {
       <p>HomeWorld: <CardInfoPlanet planetUrl={characterInfo.homeworld}  /></p>
       <p>Films:  </p>
       <ol>
-        {films?.map(film => {return <CardInfoFilms filmUrl={film} key={film}/>})}
+        {films?.map(film => {return <CardInfoFilmsList filmUrl={film} key={film}/>})}
       </ol>
       
     </div>
