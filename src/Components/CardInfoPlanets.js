@@ -10,14 +10,14 @@ function CardInfoPlanets(props) {
   const { filmUrl } = props;
 
   const [film, setFilm] = React.useState("");
-  console.log(filmUrl);
+  //console.log(filmUrl);
 
   //console.log(props);
 
   const { isLoading, error, data } = useQuery(["films", filmUrl], () => 
     getFilms(filmUrl)
   );
-  console.log(data);
+  //console.log(data);
 
   React.useEffect(() => {
     if (data) {

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useQuery } from 'react-query';
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import Card from './Card';
+
 
 const getCharacters = async () => {
     const characterList = await fetch(
@@ -15,7 +17,7 @@ function Container() {
         "CharacterList",
         getCharacters
     );
-    console.log(data);
+    //console.log(data);
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>There has been an error...</div>
     return (

@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 import * as React from "react";
+import { BrowserRouter as Router, useParams, Link } from "react-router-dom";
 import CardInfoPlanets from "./CardInfoPlanets";
 
 async function getInfoFromApi(url) {
@@ -9,13 +10,13 @@ async function getInfoFromApi(url) {
 }
 
 function CardInfo(props) {
-  const { name, homeworldUrl, filmsUrls } = props;
+  /*const { name, homeworldUrl, filmsUrls } = props;
   const [homeWorld, setHomeworld] = React.useState("");
 
   const { isLoading, error, data } = useQuery(["homeWorld", homeworldUrl], () =>
     getInfoFromApi(homeworldUrl)
   );
-  //console.log(data);
+  console.log(props);
 
   React.useEffect(() => {
     if (data) {
@@ -30,14 +31,19 @@ function CardInfo(props) {
       <div>
         {name} - {homeWorld}
       </div>
-      <div>
+      {/* <div>
           Films:
           {filmsUrls.map(url => {
               return <CardInfoPlanets filmUrl={url} />})}
         
-      </div>
+      </div> }
     </div>
   );
+}*/
+  //console.log(props);
+  let { id } = useParams();
+  //console.log(id);
+  return <div>{props.name}</div>;
 }
 
 export default CardInfo;
