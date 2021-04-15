@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useQuery } from 'react-query';
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import Card from './Card';
 
 
@@ -12,7 +11,7 @@ const getCharacters = async () => {
     return characterListJson;
 }
 
-function Container() {
+function Home() {
     const { isLoading, error, data } = useQuery(
         "CharacterList",
         getCharacters
@@ -27,4 +26,4 @@ function Container() {
     )
 }
 
-export default Container
+export default Home

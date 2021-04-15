@@ -10,13 +10,9 @@ import {
 import CardInfo from "./CardInfo";
 
 function Card(props) {
-  //const { count, next, previous, results } = props?.data
   const { characterList } = props;
 
   const [characters, setCharacters] = React.useState([]);
-  //console.log(characterList);
-  
-  
 
   React.useEffect(() => {
     if (characterList) {
@@ -30,18 +26,13 @@ function Card(props) {
     <div>
       {characters?.map((character) => {
         return (
-          <Link
-            to={`/people/${character.url.split("/")[5]}`}
+          <CardInfo
+            name={character.name}
+            homeworldUrl={character.homeworld}
+            filmsUrls={character.films}
+            url={character.url}
             key={character.url}
-          >
-            <CardInfo
-              name={character.name}
-              homeworldUrl={character.homeworld}
-              filmsUrls={character.films}
-              key={character.url}
-            />
-            {/* <div>{character.name}</div> */}
-          </Link>
+          />
         );
       })}
     </div>
