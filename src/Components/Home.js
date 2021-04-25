@@ -22,6 +22,7 @@ function Home() {
     return (
         <React.Fragment>
             {data && <Card characterList={data}/>}
+            <p>I'm the change! </p>
         </React.Fragment>
     )
 }
