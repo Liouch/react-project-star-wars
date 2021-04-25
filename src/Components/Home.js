@@ -24,6 +24,8 @@ function Home() {
             {data && <Card characterList={data}/>}
             <p>I'm the change to merge! </p>
             <p>This is a change ahead of the branch to try the merge</p>
+            
+            <p>I'm the line from main meant for rebase</p>
         </React.Fragment>
     )
 }
