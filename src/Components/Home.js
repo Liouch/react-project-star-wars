@@ -22,6 +22,7 @@ function Home() {
     return (
         <React.Fragment>
             {data && <Card characterList={data}/>}
+            <p>This is a change ahead of the branch to try the merge</p>
         </React.Fragment>
     )
 }
