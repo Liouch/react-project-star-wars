@@ -26,6 +26,7 @@ function Home() {
             <p>This is a change ahead of the branch to try the merge</p>
             
             <p>I'm the line from main meant for rebase</p>
+            <p>Line meant for the rebase</p>
         </React.Fragment>
     )
 }
